@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Budget Planner</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+ </head>
+<body>
+    <div class="container">
+
+        <h1> Expense Tracker </h1>
+        <br>
+        <form>
+            
+            <div class="row mb-3">
+                <div class="col"> 
+                Product Name: <input type="text" id="pname">
+            </div>
+                <div class="col"> 
+                Product Price: <input type="number" id="pprice">
+            </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                <input type='button' onclick='changeText2()' value='Submit' /> </div>
+            </div>
+
+            <hr>
+            <h5>List of Expenses:</h5><br>
+            <div class="row"> 
+                <div class="col">    
+                    <h6>Name:</h6>
+                    <ol id="name"></ol>
+                </div>
+                    <div class="col">
+                    <h6>Expenses:</h6>
+                    <ol id="price"></ol>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                <input type="button" onclick="calculate()" value="Total Price"/>
+                </div>
+                <div class="col">
+                <p id="total"></p>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+          var list = document.getElementById('name');
+          var list1 = document.getElementById('price');
+          var prices=[];
+          function changeText2() {
+                var name = document.getElementById('pname').value;
+                document.getElementById('pname').innerHTML = name;
+                var entry = document.createElement('li');
+                entry.appendChild(document.createTextNode(name));
+                list.appendChild(entry);
+                console.log(name);
+
+                var price = document.getElementById('pprice').value;
+                document.getElementById('pprice').innerHTML = price;
+                var entry = document.createElement('li');
+                entry.appendChild(document.createTextNode(price));
+                list1.appendChild(entry);
+                console.log(price);
+                 
+                 prices.push(price);
+            }
+
+            function calculate(){
+                var total = 0;
+                for(var x=0;x<prices.length;x++)
+                {
+                    total+=parseInt(prices[x]);
+                }
+                document.getElementById("total").innerHTML=total;
+                console.log(total);
+            }
+                    
+    </script>
+</body>
+</html>
