@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "firstName": "Sebastian",
+      "lastName": "Eschweiler",
+      "email": "sebastian@codingthesmartway.com",
+      "mobile": "9834738573",
+      "salary": "82472"
+    },
+    {
+      "id": 2,
+      "firstName": "Steve",
+      "lastName": "Palmer",
+      "email": "steve@codingthesmartway.com",
+      "mobile": "8734836536",
+      "salary": "42322"
+    },
+    {
+      "id": 4,
+      "firstName": "Manas ",
+      "lastName": "Preetham",
+      "email": "manaspreetham@codingthesmartway.com",
+      "mobile": "8436532665",
+      "salary": "67099"
+    },
+    {
+      "id": 5,
+      "firstName": "Nikunj",
+      "lastName": "Soni",
+      "email": "nikunj@gmail.com",
+      "mobile": "8374835650",
+      "salary": "95032"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
